@@ -3,11 +3,237 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Maaz’s Pixels</title>
+  <title>Maaz Portfolio</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #6366f1;
+      --secondary: #a5b4fc;
+      --text-dark: #1f2937;
+      --text-light: #6b7280;
+      --white: #fff;
+      --bg: #f9fafb;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text-dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    header {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      background: rgba(255,255,255,0.9);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      padding: 1rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    nav a {
+      margin-left: 2rem;
+      text-decoration: none;
+      color: var(--text-dark);
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: var(--primary);
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: var(--white);
+      padding: 2rem;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      animation: fadeIn 1s ease-out forwards;
+    }
+
+    .hero p {
+      max-width: 600px;
+      margin-bottom: 2rem;
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+
+    .hero button {
+      background: var(--white);
+      color: var(--primary);
+      border: none;
+      padding: 0.8rem 2rem;
+      font-size: 1rem;
+      border-radius: 50px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .hero button:hover {
+      transform: translateY(-3px);
+      background: var(--secondary);
+      color: var(--white);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    section {
+      padding: 6rem 2rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .about img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    .about-text h2 {
+      color: var(--primary);
+      margin-bottom: 1rem;
+      font-size: 2rem;
+    }
+
+    .about-text p {
+      color: var(--text-light);
+      margin-bottom: 1rem;
+    }
+
+    .cta {
+      text-align: center;
+      padding: 4rem 2rem;
+      background: var(--primary);
+      color: var(--white);
+    }
+
+    .cta h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .cta button {
+      background: var(--white);
+      color: var(--primary);
+      border: none;
+      padding: 0.75rem 2rem;
+      border-radius: 50px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .cta button:hover {
+      background: var(--secondary);
+      color: var(--white);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: var(--white);
+      color: var(--text-light);
+      border-top: 1px solid #e5e7eb;
+    }
+
+    @media (max-width: 768px) {
+      .about {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
 </head>
-<body style="font-family: sans-serif; text-align: center; margin-top: 50px;">
-  <h1>Welcome to Maaz’s Pixels!</h1>
-  <p>This is your portfolio homepage — hosted for free on GitHub Pages 🚀</p>
+<body>
+
+  <header>
+    <div class="logo">Maaz's Web</div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Hi, I'm Maaz — Web Developer & Designer</h1>
+    <p>I build fast, beautiful, and user-friendly websites with clean, modern code and stunning design. Let's create something exceptional together.</p>
+    <button onclick="scrollToSection('about')">Explore More</button>
+  </section>
+
+  <section id="about" class="about">
+    <div class="about-text">
+      <h2>About My Work</h2>
+      <p>With years of experience in front-end and full-stack development, I specialize in crafting digital experiences that are performant, scalable, and visually engaging.</p>
+      <p>My work blends the precision of engineering with the creativity of design — resulting in websites that don’t just look great, but *feel* great to use.</p>
+    </div>
+    <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&fit=crop&w=1000&q=80" alt="Developer workspace">
+  </section>
+
+  <section class="cta" id="contact">
+    <h2>Want to Collaborate?</h2>
+    <p>Let’s bring your vision to life — contact me for your next web project.</p>
+    <button onclick="alert('Thank you! We’ll get in touch soon.')">Get in Touch</button>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Maaz's Portfolio. Designed by Maaz.</p>
+  </footer>
+
+  <script>
+    function scrollToSection(id) {
+      const section = document.getElementById(id);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  </script>
+
     <img src="screenshot6.png" width="350">
     <img src="screenshot7.png" width="350">
     <img src="screenshot8.png" width="350">
